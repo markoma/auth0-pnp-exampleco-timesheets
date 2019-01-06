@@ -13,6 +13,9 @@ if (!process.env.AUTH0_DOMAIN || !process.env.AUTH0_AUDIENCE) {
   throw 'Make sure you have AUTH0_DOMAIN, and AUTH0_AUDIENCE in your .env file';
 }
 
+// due to issues with .env file, testing actual variable transfer
+console.log(process.env.AUTH0_DOMAIN);
+
 // Enable CORS
 app.use(cors());
 
@@ -23,12 +26,14 @@ const checkJwt = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: 'https://${process.env.AUTH0_DOMAIN}/.well-known/jwks.json'
+    //AUTH0_DOMAIN not substituting correctly, hard coding the value  
+    jwksUri: 'https://sboguys.auth0.com/.well-known/jwks.json'
   }),
 
   // Validate the audience and the issuer.
   audience: process.env.AUTH0_AUDIENCE,
-  issuer: 'https://${process.env.AUTH0_DOMAIN}/',
+  //AUTH0_DOMAIN not substituting correctly, hard coding the value  
+  issuer: 'https://sboguys.auth0.com/',
   algorithms: ['RS256']
 });
 
@@ -60,7 +65,7 @@ app.post('/timesheets', checkJwt, jwtAuthz(['create:timesheets']), function (req
   // determine id for new timesheet
   var max = Math.max(...timesheets.map(elt => elt.id))
   timesheet.id = max + 1;
-  timesheet.user_id = req.user['https://api.exampleco.com/email'];
+  timesheet.user_id = req.user['https://api-example.com/email'];
   timesheet.approved = false;
 
   // append the timesheet
@@ -73,7 +78,7 @@ app.post('/timesheets', checkJwt, jwtAuthz(['create:timesheets']), function (req
 // create timesheets API endpoint
 app.get('/timesheets', checkJwt, jwtAuthz(['read:timesheets']), function (req, res) {
   // Get timesheet entries for this user
-  var userEntries = timesheets.filter(entry => entry.user_id === req.user['https://api.exampleco.com/email']);
+  var userEntries = timesheets.filter(entry => entry.user_id === req.user['https://api-example.com/email']);
 
   //send the response
   res.status(200).send(userEntries);
