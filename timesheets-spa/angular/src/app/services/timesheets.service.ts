@@ -27,4 +27,13 @@ export class TimesheetsService {
   approveTimesheet(id: number) {
     return this.authHttp.put(AUTH_CONFIG.apiUrl + '/approvals/' + id, {})
   }
+
+  getUndeletedTimesheets() {
+    return this.authHttp.get(AUTH_CONFIG.apiUrl + '/deletes')
+      .map(res => res.json())
+  }
+
+  deleteTimesheet(id: number) {
+    return this.authHttp.put(AUTH_CONFIG.apiUrl + '/deletes/' + id, {})
+  }
 }
