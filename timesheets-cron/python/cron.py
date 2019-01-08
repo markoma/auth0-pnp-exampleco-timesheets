@@ -5,10 +5,10 @@ def main():
     import httplib
 
     # Configuration Values
-    domain = "DOMAIN" # Your Auth0 Domain
-    api_identifier = "API_IDENTIFIER" # API Identifier of your API
-    client_id = "CLIENT_ID" # Client ID of your Non Interactive Client
-    client_secret = "CLIENT_SECRET" # Client Secret of your Non Interactive Client
+    domain = "sboguys.auth0.com" # Your Auth0 Domain
+    api_identifier = "https://api-example.com/timesheets" # API Identifier of your API
+    client_id = "x0uh4R233Z6LFwPkfHsr3YA3ED3iwTpW" # Client ID of your Non Interactive Client
+    client_secret = "Xvd52DCi9tJlXloJR_zTf5rBv0XO_DWqD4VbYQM5Japg23OVjzhB7kDZVyctUiYl" # Client Secret of your Non Interactive Client
     api_url = "http://localhost:8080/timesheets/upload"
     grant_type = "client_credentials" # OAuth 2.0 flow to use
 

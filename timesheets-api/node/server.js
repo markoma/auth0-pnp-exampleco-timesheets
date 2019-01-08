@@ -66,7 +66,8 @@ app.post('/timesheets', checkJwt, jwtAuthz(['create:timesheets']), function (req
   var max = Math.max(...timesheets.map(elt => elt.id))
   timesheet.id = max + 1;
   timesheet.user_id = req.user['https://api-example.com/email'];
-  timesheet.approved = false;
+  // timesheet.approved = false;
+  timesheet.deleted = false;
 
   // append the timesheet
   timesheets.push(req.body);
@@ -84,6 +85,7 @@ app.get('/timesheets', checkJwt, jwtAuthz(['read:timesheets']), function (req, r
   res.status(200).send(userEntries);
 });
 
+/*
 app.put('/approvals/:id', checkJwt, jwtAuthz(['approve:timesheets']), function (req, res) {
   var entry = timesheets.filter(entry => entry.id == req.params.id)[0];
   entry.approved = true;
@@ -98,16 +100,17 @@ app.get('/approvals', checkJwt, jwtAuthz(['approve:timesheets']), function (req,
   //send the response
   res.status(200).send(unapprovedEntries);
 });
+*/
 
-app.delete('/deletes/:id', checkJwt, jwtAuthz(['delete:timesheets']), function (req, res) {
-  timesheets = timesheets.filter(entry => entry.id != req.params.id)[0];
+app.put('/deletes/:id', checkJwt, jwtAuthz(['delete:timesheets']), function (req, res) {
+  var entry = timesheets.filter(entry => entry.id == req.params.id)[0];
   entry.deleted = true;
 
   //send the response
   res.status(200).send(entry);
 });
 
-app.get('/deletes', checkJwt, jwtAuthz(['approve:timesheets']), function (req, res) {
+app.get('/deletes', checkJwt, jwtAuthz(['delete:timesheets']), function (req, res) {
   var undeletedEntries = timesheets.filter(entry => entry.deleted == false);
 
   //send the response

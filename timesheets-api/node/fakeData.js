@@ -9,7 +9,7 @@ exports.timesheets = function() {
                 date: faker.date.recent(),
                 project: faker.random.arrayElement(['StoreZero', 'Auth0 Dashboard']),
                 hours: faker.random.number({min:4, max:8}),
-                approved: false,
+                // approved: false,
                 deleted: false
             }
         })

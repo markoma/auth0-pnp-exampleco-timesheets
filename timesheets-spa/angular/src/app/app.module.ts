@@ -18,7 +18,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { CallbackComponent } from './callback/callback.component';
 import { TimesheetListComponent } from './timesheet-list/timesheet-list.component';
 import { TimesheetAddComponent } from './timesheet-add/timesheet-add.component';
-import { ApprovalComponent } from './approval/approval.component';
+// import { ApprovalComponent } from './approval/approval.component';
 import { DeleteComponent } from './delete/delete.component';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
@@ -36,7 +36,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     CallbackComponent,
     TimesheetListComponent,
     TimesheetAddComponent,
-    ApprovalComponent,
+    // ApprovalComponent,
     DeleteComponent
   ],
   imports: [
