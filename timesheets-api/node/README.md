@@ -1,3 +1,9 @@
+2019 01 08 - code modified by MMa
+
+# Delete functionality added
+The server code needed to match the delete capabilities in the SPA code.
+
+
 # Node.js API
 
 ## Overview

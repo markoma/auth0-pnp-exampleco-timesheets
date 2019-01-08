@@ -99,6 +99,21 @@ app.get('/approvals', checkJwt, jwtAuthz(['approve:timesheets']), function (req,
   res.status(200).send(unapprovedEntries);
 });
 
+app.delete('/deletes/:id', checkJwt, jwtAuthz(['delete:timesheets']), function (req, res) {
+  timesheets = timesheets.filter(entry => entry.id != req.params.id)[0];
+  entry.deleted = true;
+
+  //send the response
+  res.status(200).send(entry);
+});
+
+app.get('/deletes', checkJwt, jwtAuthz(['approve:timesheets']), function (req, res) {
+  var undeletedEntries = timesheets.filter(entry => entry.deleted == false);
+
+  //send the response
+  res.status(200).send(undeletedEntries);
+});
+
 // launch the API Server at localhost:8080
 app.listen(8080);
 console.log('Listening on http://localhost:8080');

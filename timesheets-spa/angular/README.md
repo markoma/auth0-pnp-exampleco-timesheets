@@ -1,3 +1,11 @@
+2019 01 08 - modified by MMa
+
+# Comments about efforts to add Delete functionality
+
+This app is running great, but needs to have delete functionality. I envisioned mimic-ing the approval code
+and using it as the template to add another menu item for deletion of timesheets.
+
+
 # Angular Single Page Application
 
 ## Overview

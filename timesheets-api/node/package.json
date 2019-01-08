@@ -18,17 +18,17 @@
   },
   "homepage": "https://github.com/auth0-samples/auth0-pnp-timesheets#readme",
   "dependencies": {
-    "body-parser": "^1.17.1",
+    "body-parser": "^1.18.3",
     "cors": "^2.8.1",
     "dotenv": "^4.0.0",
-    "express": "^4.14.0",
-    "express-jwt": "^5.1.0",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
     "express-jwt-authz": "^1.0.0",
     "faker": "^4.1.0",
-    "jwks-rsa": "^1.1.1",
-    "lodash": "^4.17.4"
+    "jwks-rsa": "^1.3.0",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.18.9"
   }
 }
