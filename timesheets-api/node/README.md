@@ -3,16 +3,13 @@
 # Delete functionality added
 This API server needed functions to match the requirements proposed.
 
-The ability desired was to allow read and write data for users such as employees, and to read, write
-and delete data for managers.
+The ability desired was to allow limited access, such as only read and write of data for users such as employees, and to read, write and delete data for managers.
 
 
 # Purpose of server code
 In addition to the previous functions, additional capability exists in the form of batch updates.
 
-As mentioned in more detail below, this application was built to demonstrate the use of Oauth2 services using Auth0 SAAS.
-This represents the server portion that communicates with other services to transfer data to them after proper validation
-of access rights.
+As mentioned in more detail below, this application was built to demonstrate the use of Oauth2 services using Auth0 SAAS. This represents the server portion that communicates with other services to transfer data to them after proper validation of access rights.
 
 
 

@@ -3,9 +3,7 @@
 # Purpose of this script
 In addition to the comments below, this is a simple script to confirm correct setup of the API Server.
 
-By containing connection credentials, it acts as a priviledged application that handles data from the API Server
-without needing user interaction. Its primary purpose is to upload timesheet data in groups (called
-batches).
+By containing connection credentials, it acts as a priviledged application that handles data from the API Server without needing user interaction. Its primary purpose is to upload timesheet data in groups (called batches).
 
 
 # Python Cron

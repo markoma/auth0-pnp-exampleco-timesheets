@@ -1,9 +1,12 @@
 2019 01 08 - modified by MMa
 
-# Comments about efforts to add Delete functionality
+# Changes made in order to add Delete functionality
 
-This app is running great, but needs to have delete functionality. I envisioned mimic-ing the approval code
-and using it as the template to add another menu item for deletion of timesheets.
+This app runs great, but needs delete functionality. Reviewing the code, modification of the approval function and using it as the template for delete functionality was a very straight-forward solution.
+
+This web app showcases a situation where all application code is hosted on the client. As a result, identity secrets should not be stored in the code for security reasons. By using Auth0 with this app, login takes place independent of the local application code.
+
+Additionally, since Auth0 has the ability to do more than authenticate the user to use the application, specific features (such as data deletion) were authorized based on user permissions setup in the Auth0 Admin interface.
 
 
 # Angular Single Page Application
